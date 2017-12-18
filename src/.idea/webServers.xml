@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6206ce6c-eaec-40b0-a3f2-9ee1b4de4424" name="ejudge.lksh.ru" url="http://ejudge.lksh.ru">
+        <fileTransfer host="ejudge.lksh.ru" port="22" privateKey="C:\Users\andgein\YandexDisk\Private\ssh_private_key.key" rootFolder="/home/vhosts/sis-ny-olymp" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions controlEncoding="utf-8" dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

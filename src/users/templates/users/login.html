@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="login-form">
+        <h1>Добро пожаловать<br>на новогоднюю олимпиаду</h1>
+        <form action="{% url 'users:login' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button role="button">Войти</button>
+        </form>
+    </div>
+{% endblock %}

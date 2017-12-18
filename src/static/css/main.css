@@ -1,0 +1,247 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+    height: 100%;
+    font-family: "Tahoma", serif;
+}
+
+a {
+    color: #6495ed;
+}
+
+.body-content {
+    height: 100%;
+}
+
+.body-content.with-sidebar {
+    margin-right: 400px;
+}
+
+.body-content > .map {
+	width: 100%;
+    min-height: 100%;
+    float: left;
+    background-color: #e2dfd6;
+    padding: 20px 15px;
+}
+
+.map.select-tile {
+    background-color: #e28f86;
+}
+
+.map > .map__inner {
+    padding-top: 100px;
+}
+
+.body-content > .sidebar {
+	position: fixed;
+    right: 400px;
+    top: 0;
+
+	width: 400px;
+	margin-right: -400px;
+    height: 100%;
+    padding: 35px;
+
+	background-image: url('../images/sidebar.png');
+    color: white;
+
+    overflow-y: scroll;
+}
+
+.sidebar h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    margin-bottom: 30px;
+}
+
+.sidebar > *:not(.sidebar__intro) {
+    display: none;
+}
+
+.sidebar__intro {
+    margin: 15px;
+}
+
+.sidebar__loading {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.problem > div {
+    margin: 20px 10px;
+}
+
+.bonus {
+    margin: 20px 10px;
+}
+
+.bonus-button {
+    margin-top: 20px;
+    background-color: #ddd;
+    color: #212121;
+}
+
+.bonus-button:hover {
+    background-color: #bbb;
+}
+
+.bonus-status {
+    margin: 20px 10px;
+}
+
+
+.topbar {
+    position: fixed;
+    width: 100%;
+    padding-right: 420px;
+    z-index: 2;
+}
+
+.topbar > * {
+    display: inline-block;
+}
+
+.topbar__buttons {
+    float: right;
+}
+
+.topbar__info {
+    width: 400px;
+    max-width: 50%;
+    background-color: #212121;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 5px 5px 0 0 black;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #212121;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    box-shadow: 5px 5px 0 0 black;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #313131;
+}
+
+button:active {
+    box-shadow: 1px 1px 0 0 black;
+    position: relative;
+    top: 4px;
+    left: 4px;
+}
+
+
+.tiles-row {
+	position: relative;
+	overflow: hidden;
+}
+
+.tiles-row.odd {
+	margin-left: 46px;
+}
+
+.tiles-row .tile {
+	display: inline-block;
+	width: 81px;
+	height: 93px;
+    margin: 0 6px;
+    cursor: pointer;
+
+    text-align: center;
+    padding: 27px 0 0;
+    font-size: 30px;
+    color: #666;
+}
+
+.tiles-row .tile.empty {
+    cursor: default;
+	background-image: url('../images/empty.png');
+}
+
+.tiles-row .tile.problem.status-0 {
+    cursor: default;
+    pointer-events: none;
+}
+
+.select-tile .tiles-row .tile.problem.status-0 {
+    pointer-events: initial;
+    cursor: pointer;
+}
+.select-tile .tiles-row .tile.problem:not(.status-0) {
+    cursor: default;
+    pointer-events: none;
+}
+
+.tiles-row .tile.problem.status-1,
+.tiles-row .tile.problem.status-2 {
+	background-image: url('../images/problem.png');
+    color: #363f6b;
+}
+
+.tiles-row .tile.problem.status-1:hover,
+.tiles-row .tile.problem.status-2:hover {
+	background-image: url('../images/problem_hover.png');
+    color: #666f9b;
+}
+
+.tiles-row .tile.problem.status-0       { background-image: url('../images/closed.png'); }
+.tiles-row .tile.problem.status-3       { background-image: url('../images/tried.png'); }
+.tiles-row .tile.problem.status-3:hover { background-image: url('../images/tried_hover.png'); }
+.tiles-row .tile.problem.status-4       { background-image: url('../images/solved.png'); color: #356a58; }
+.tiles-row .tile.problem.status-4:hover { background-image: url('../images/solved_hover.png'); color: #659a88; }
+
+
+.monitor table td,
+.monitor table th {
+    text-align: left;
+    padding: 5px;
+}
+
+.monitor table {
+    width: 100%;
+    border-spacing: 0px;
+}
+
+.monitor table td {
+    border-top: 1px solid #666;
+}
+
+.login-form {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.login-form h1 {
+    margin-bottom: 50px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 7px 5px;
+    margin-left: 10px;
+}

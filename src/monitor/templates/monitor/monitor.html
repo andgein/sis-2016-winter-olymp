@@ -1,0 +1,40 @@
+{% load helpers %}
+
+{% if monitor.is_frozen %}
+    <div>
+        Монитор заморожен
+    </div>
+{% endif %}
+
+<table>
+    <thead>
+        <tr>
+            <th>Команда</th>
+            <th>Задачи</th>
+            <th>Очки</th>
+        </tr>
+    </thead>
+    {% for user_id in monitor.sorted_users_ids %}
+        {% if monitor.users_names|get_item:user_id != '' %}
+            <tr>
+                <td>
+                    {{ monitor.users_names|get_item:user_id }}
+                </td>
+                {% if full_monitor %}
+                    <td>
+                        {% for problem in monitor.solved_problems|get_item:user_id %}
+                            {{ problem }},
+                        {% endfor %}
+                    </td>
+                {% else %}
+                    <td>
+                        {{ monitor.solved_problems|get_item:user_id|length }}
+                    </td>
+                {% endif %}
+                <td>
+                    {{ monitor.scores|get_item:user_id }}
+                </td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>

@@ -1,0 +1,34 @@
+<div class="problem">
+    <h1 class="problem__name">{{ tile.ejudge_short_name }}.&nbsp;«{{ tile.name }}»</h1>
+    {% if type == 'problem' %}
+        <div class="problem__score">
+            Правильное решение&nbsp;&mdash; {{ tile.solved_award }} очков.<br/>
+            Штраф за неправильное&nbsp;&mdash; {{ tile.wrong_penalty }}.
+        </div>
+    {% else %}
+        <div class="problem__score">
+            За&nbsp;правильное решение этой задачи вы&nbsp;получите приятный бонус, а&nbsp;не&nbsp;очки.
+            Бонус можно будет получить здесь&nbsp;же.
+        </div>
+    {% endif %}
+    <div class="problem__statement">
+        <a href="{% url 'map:statement' tile.id %}" target="_blank">Условие задачи</a>
+    </div>
+    {% if type == 'bonus' and tile.is_retrieved %}
+    {% else %}
+        <div class="problem__id">
+            Ответ сдайте в задачу {{ tile.ejudge_short_name }} в еджадже. После решения задачи обновите страницу.
+        </div>
+    {% endif %}
+</div>
+{% if type == 'bonus' %}
+    <div class="bonus">
+        {% if tile.is_retrieved %}
+            Вы решили эту задачу и можете воспользовать бонусом: <b>{{ tile.get_description }}</b>.
+            <button class="bonus-button" data-url="{% url 'map:use_bonus' tile.id "ID" %}" {% if tile.is_tile_selection %}data-tile-selection="true"{% endif %}>Воспользоваться бонусом</button>
+        {% endif %}
+    </div>
+    <div class="bonus-status">
+
+    </div>
+{% endif %}
